@@ -53,7 +53,6 @@ export function AuthProvider({ children }) {
     try {
       await auth.signOut(); // استخدام Firebase لتسجيل الخروج
       setCurrentUser(null); // مسح المستخدم الحالي
-      navigate('/login'); // التوجيه إلى صفحة تسجيل الدخول
     } catch (error) {
       console.error('Error logging out:', error); // التعامل مع الخطأ إذا فشل تسجيل الخروج
     }
