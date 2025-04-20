@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './assets/pages/Home';
-import Login from './assets/pages/Login';
-import SignUp from './assets/pages/SignUp';
-import About from './assets/pages/About';
-import Cart from './assets/pages/Cart';
-import NavbarMain from './assets/components/NavBarMain';
-import Footer from './assets/components/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import About from './pages/About';
+import Cart from './pages/Cart';
+import NavbarMain from './components/NavBarMain';
+import Footer from './components/Footer';
 import { AuthProvider } from './assets/context/AuthContext';
 
 const Layout = ({ children }) => {

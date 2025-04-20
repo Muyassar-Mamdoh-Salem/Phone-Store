@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FiSearch, FiShoppingCart, FiMenu, FiX } from 'react-icons/fi';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../assets/context/AuthContext';
 
 function NavbarMain() {
   const [searchQuery, setSearchQuery] = useState('');

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login as firebaseLogin, signUp as firebaseSignUp, auth } from '../firebase';
+import { login as firebaseLogin, signUp as firebaseSignUp, auth } from '../../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
 // إنشاء السياق

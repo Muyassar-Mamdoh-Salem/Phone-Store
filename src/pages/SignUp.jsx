@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../assets/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
@@ -27,7 +27,8 @@ function SignUp() {
     const result = await signup(email, password);
 
     if (result.success) {
-      navigate("/");
+      alert("Account created successfully");
+      navigate("/login");
     } else {
       setError(result.message);
     }

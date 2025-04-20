@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAHPasFko3YJIcumM2Y_VMZHhyMtg9rxiQ",
   authDomain: "phone-store-bbb1e.firebaseapp.com",
@@ -16,40 +17,58 @@ const firebaseConfig = {
   measurementId: "G-RSEZEC8P4F"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Sign up function
 const signUp = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     return {
       success: true,
       user: userCredential.user,
-      message: "تم إنشاء الحساب بنجاح"
+      message: "Account created successfully"
     };
   } catch (error) {
-    let message = "حدث خطأ أثناء التسجيل";
-    switch(error.code) {
+    let message = "An error occurred during sign up";
+
+    switch (error.code) {
       case "auth/email-already-in-use":
-        message = "هذا البريد الإلكتروني مستخدم بالفعل";
+        message = "This email is already in use";
         break;
       case "auth/weak-password":
-        message = "كلمة المرور يجب أن تكون 6 أحرف على الأقل";
+        message = "Password should be at least 6 characters";
         break;
       case "auth/invalid-email":
-        message = "بريد إلكتروني غير صالح";
+        message = "Invalid email address";
         break;
     }
+
     return { success: false, message };
   }
 };
 
+// Login function
 const login = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     return { success: true, user: userCredential.user };
   } catch (error) {
-    let message = "حدث خطأ أثناء تسجيل الدخول";
+    let message = "An error occurred during login";
+
+    switch (error.code) {
+      case "auth/user-not-found":
+        message = "No user found with this email";
+        break;
+      case "auth/wrong-password":
+        message = "Incorrect password";
+        break;
+      case "auth/invalid-email":
+        message = "Invalid email address";
+        break;
+    }
+
     return { success: false, message };
   }
 };

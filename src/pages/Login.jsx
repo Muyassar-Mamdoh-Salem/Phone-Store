@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../assets/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -13,20 +13,22 @@ function Login() {
 
   // دالة المعالجة عند إرسال النموذج
   const handleSubmit = async (e) => {
-    e.preventDefault(); // منع إرسال النموذج بشكل افتراضي
-    setLoading(true); // تفعيل حالة التحميل أثناء العملية
-    setError(""); // مسح أي خطأ سابق
-
-    // محاولة تسجيل الدخول باستخدام البريد الإلكتروني وكلمة المرور
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+  
     const result = await login(email, password);
-
-    // إذا فشلت عملية الدخول، قم بإظهار رسالة الخطأ
+  
     if (!result.success) {
       setError(result.message);
+    } else {
+      alert("Logged in successfully ✅");
+      navigate("/");
     }
-
-    setLoading(false); // إيقاف حالة التحميل بعد إتمام العملية
+  
+    setLoading(false);
   };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#FBF8EF]">
