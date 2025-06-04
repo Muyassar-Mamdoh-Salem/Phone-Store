@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../assets/context/AuthContext";
 import { Link } from "react-router-dom";
-import productsData from"../assets/Products.Json";
+import productsData from"../assets/";
 
 const ProductList = () => {
   const { products, addToCart } = useAuth();

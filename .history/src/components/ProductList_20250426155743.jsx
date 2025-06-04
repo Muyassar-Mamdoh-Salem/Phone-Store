@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { useAuth } from "../assets/context/AuthContext";
 import { Link } from "react-router-dom";
-import productsData from"../assets/Products.Json";
 
 const ProductList = () => {
   const { products, addToCart } = useAuth();
   const [selectedBrand, setSelectedBrand] = useState("All");
 
-  // استخراج الماركات من ملف JSON بدون تكرار
-  const brands = ["All", ...new Set(productsData.map((p) => p.brand))];
+  // استخراج الماركات من المنتجات بدون تكرار
+  const brands = ["All", ...new Set(products.map((p) => p.brand))];
 
   // فلترة المنتجات حسب الماركة المختارة
   const filteredProducts =
     selectedBrand === "All"
-      ? productsData
-      : productsData.filter((product) => product.brand === selectedBrand);
+      ? products
+      : products.filter((product) => product.brand === selectedBrand);
 
   return (
     <div className="p-6">
