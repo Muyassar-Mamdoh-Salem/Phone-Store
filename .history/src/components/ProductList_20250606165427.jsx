@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useAuth } from "../assets/context/AuthContext";
+import { useAuth } from "../assets/AuthContext";
 import { Link } from "react-router-dom";
 import productsData from "../assets/Products.json";
 import gsap from "gsap";
@@ -45,8 +45,8 @@ const ProductList = () => {
             key={brand}
             onClick={() => setSelectedBrand(brand)}
             className={`px-4 py-2 rounded-full border text-sm font-semibold transition ${selectedBrand === brand
-              ? "bg-[#FFB433] text-white"
-              : "bg-gray-200 hover:bg-[#FFB433]"
+                ? "bg-[#FFB433] text-white"
+                : "bg-gray-200 hover:bg-[#FFB433]"
               }`}
           >
             {brand}

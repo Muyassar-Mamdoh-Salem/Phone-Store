@@ -30,7 +30,7 @@ const ProductDetails = () => {
           alt={product.name}
           className="w-64 h-64 object-cover mb-6 sm:mb-0 sm:w-80 sm:h-80 justify-self-center"
         />
-
+        
         {/* تفاصيل المنتج */}
         <div className="flex flex-col gap-2 sm:ml-6 justify-self-start">
           <div className="text-xl font-semibold">Price: ${product.price}</div>
@@ -38,7 +38,7 @@ const ProductDetails = () => {
           <div className="text-gray-900">Camera: {product.camera}</div>
           <div className="text-gray-900">RAM: {product.ram}</div>
           <div className="text-gray-900">Storage: {product.storage}</div>
-
+          
           {/* الأزرار */}
           <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
             <button

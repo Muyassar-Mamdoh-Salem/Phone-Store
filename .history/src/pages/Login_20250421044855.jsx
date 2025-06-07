@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   // حالة البريد الإلكتروني وكلمة المرور والخطأ وحالة التحميل
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
   const [error, setError] = useState(""); // لتخزين أي خطأ أثناء عملية تسجيل الدخول
   const [loading, setLoading] = useState(false); // لحالة التحميل أثناء محاولة تسجيل الدخول
@@ -16,19 +16,19 @@ function Login() {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+  
     const result = await login(email, password);
-
+  
     if (!result.success) {
       setError(result.message);
     } else {
       alert("Logged in successfully ✅");
       navigate("/");
     }
-
+  
     setLoading(false);
   };
-
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#FBF8EF]">
@@ -37,7 +37,7 @@ function Login() {
 
         {/* عرض رسالة الخطأ إذا كانت موجودة */}
         {error && <div className="bg-red-100 text-red-700 p-4 rounded-md mb-6">{error}</div>}
-
+        
         <form onSubmit={handleSubmit}>
           {/* حقل البريد الإلكتروني */}
           <div className="mb-6">

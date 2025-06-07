@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login as firebaseLogin, signUp as firebaseSignUp, auth } from '../../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-// import Products from "../Products.json";
+import Products from "./Products.json";
 
 const AuthContext = createContext();
 
@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
       setLoading(false);
     });
     return unsubscribe;
-  }, []);
+  , []);
 
   const login = async (email, password) => {
     try {

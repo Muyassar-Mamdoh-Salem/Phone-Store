@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login as firebaseLogin, signUp as firebaseSignUp, auth } from '../../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-// import Products from "../Products.json";
+import Products from ".";
 
 const AuthContext = createContext();
 

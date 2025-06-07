@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { useAuth } from "../assets/context/AuthContext";
+import { useAuth } from "../assets/AuthContext";
 
 const ProductDetails = () => {
   const { id } = useParams();
