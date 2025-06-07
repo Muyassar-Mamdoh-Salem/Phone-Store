@@ -22,7 +22,7 @@ const CheckOut = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8  grid-cols-1 sm-grid-cols-1 lg-grid -cols-1 pt-20 ">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8  grid-cols-1 sm-grid-cols-1 lg-grid -cols-1 mt-18 ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center text-[#FFB433] mb-6">إتمام الدفع</h2>
 

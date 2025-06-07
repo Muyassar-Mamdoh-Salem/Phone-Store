@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth } from '../assets/context/AuthContext';
-import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const {
@@ -82,11 +81,7 @@ const Cart = () => {
             >
               Delete All Products
             </button>
-         <Link to="/CheckOut">
-                     <button className="border rounded-lg px-4 py-2 bg-green-500 text-white hover:bg-green-600 transition duration-300 w-full sm:w-auto">
-                       Buy Now
-                     </button>
-                   </Link>
+            <button>go to checkout</button>
           </div>
         </>
       )}

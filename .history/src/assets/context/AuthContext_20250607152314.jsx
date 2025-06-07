@@ -20,6 +20,16 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
+useEffect(() => {
+  fetch('/data/Products.json')
+    .then((res) => res.json())
+    .then((data) => setProducts(data))
+    .catch((err) => console.error('Failed to load products:', err));
+}, []);
+
+
+
+
   const login = async (email, password) => {
     try {
       const result = await firebaseLogin(email, password);

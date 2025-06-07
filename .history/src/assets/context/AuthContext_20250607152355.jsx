@@ -20,6 +20,8 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
+  
+
   const login = async (email, password) => {
     try {
       const result = await firebaseLogin(email, password);

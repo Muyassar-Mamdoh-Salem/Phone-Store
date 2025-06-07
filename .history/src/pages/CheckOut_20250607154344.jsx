@@ -17,12 +17,7 @@ const CheckOut = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // يمكنك إضافة منطق الدفع هنا (مثل الاتصال بـ API للدفع)
-    alert('تم الدفع بنجاح!');
-  };
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-8  grid-cols-1 sm-grid-cols-1 lg-grid -cols-1 pt-20 ">
+    // يمكنك إضافة منطق الدفع هنا (مثل   ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center text-[#FFB433] mb-6">إتمام الدفع</h2>
 
